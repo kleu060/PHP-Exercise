@@ -23,7 +23,7 @@
 - Add Unit test(s)
 - Use Docker
 
-# System Infrastructure
+# Docker Configuration
 This project will install 3 Docker Container
 1.  web - run backend application which is using PHP8.2, It uses port `8000` by default
 2.  vue_app_dev - run the frontend application which is written by VUE, It uses port `8080` by default
