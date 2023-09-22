@@ -1,5 +1,29 @@
-# asknicely
+# asknicely Technical Test
 
+# How you will be assessed
+
+- Tasks are completed to the best of your ability
+- Code structure and quality
+- Code scalability and performance considerations
+- Clear instructions on how to run the application
+- Suggest any future improvements you would make if you had unlimited time
+
+# The Test
+
+- Given a CSV file 
+- Make a simple web-based interface which:
+    - Accepts the CSV file
+    - Imports the CSV file into a database
+    - Displays the list of Employees
+    - allows the user to edit an Employee’s Email Address
+    - Shows the average salary of each company
+
+# Bonus
+
+- Add Unit test(s)
+- Use Docker
+
+# System Infrastructure
 This project will install 3 Docker Container
 1.  web - run backend application which is using PHP8.2, It uses port `8000` by default
 2.  vue_app_dev - run the frontend application which is written by VUE, It uses port `8080` by default
@@ -13,6 +37,8 @@ This project will install 3 Docker Container
 5.  make all functions non-static
 6.  make Company/Employee properties private and create get(), set() to retrieve or set property
 7.  Implement more Unit Tests, especially test on the API functions (get.php and post.php)
+8.  Consider security issue on get.php and post.php.  i.e. CSP
+9.  Add csrf token when submit csv file
 
 
 ## Installation
