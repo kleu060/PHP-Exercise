@@ -1,0 +1,38 @@
+version: "3.7"
+services:
+  web:
+    build: .
+    working_dir: /var/www/html
+    depends_on: [db]
+    volumes:
+      - type: bind
+        source: .
+        target: /var/www/html/
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: asknicely_employee
+      MYSQL_USER: asknicely_user
+      MYSQL_PASSWORD: asknicely_pass
+    ports:
+      - "8000:80"
+  vue_app_dev:
+    build: 
+      context: asknicely-employee-app
+    volumes:
+      - ./asknicely-employee-app:/app
+      - /app/node_modules
+    ports:
+      - "8080:8080"
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: asknicely_employee
+      MYSQL_USER: asknicely_user
+      MYSQL_PASSWORD: asknicely_pass
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
+volumes:
+  mysql-data:
